@@ -6,8 +6,9 @@ public class FoodItem extends GenericItem { // наследуем класс Foo
     private short expires; // срок годности
     private GregorianCalendar dateOfIncome; // дата производства через Календарь
 
-    SimpleDateFormat dateFormat = new SimpleDateFormat(" dd MMMM yyyy");
+    SimpleDateFormat dateFormat = new SimpleDateFormat(" dd MMMM yyyy"); // формат даты
 
+    // конструктор
     FoodItem(int tempId, String tempName, float tempPrice, FoodItem tempAnalog, Category tempCategory, GregorianCalendar tempDateOfIncome, short tempExpires) {
         super(tempId, tempName, tempPrice, tempAnalog, tempCategory);
         dateOfIncome = tempDateOfIncome;

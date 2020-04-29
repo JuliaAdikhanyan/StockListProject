@@ -19,12 +19,12 @@ public class GenericItem implements Cloneable {
         analog = tempAnalog;
         category = tempCategory;
     }
-    public boolean equals(Object o) {
+    public boolean equals(Object o) { // сравнение объектов
         GenericItem Item = (GenericItem) o;
         return (this.id == ((GenericItem) o).id);
     }
 
-    public GenericItem clone() {
+    public GenericItem clone() { // клонирование объекты
         try {
             return (GenericItem)super.clone();
         } catch (CloneNotSupportedException ex) {
@@ -32,11 +32,11 @@ public class GenericItem implements Cloneable {
         }
     }
 
-    public GenericItem cloneAnalog() {
+    public GenericItem cloneAnalog() { // клонирование аналога
             return getAnalog().clone();
     }
 
-    public String toString() {
+    public String toString() { // преобразуем в строку
         return "---ID: " + id + " ---Name: " + name + " ---Price: " + price + " ---Analog: " + analog.name + " ---Category: " + category +
                 " " + " ---HashCode: " + this.hashCode();
     }
