@@ -12,28 +12,30 @@ public class GenericItem implements Cloneable {
         analog = tempAnalog;
     }
 
-    GenericItem(int tempId, String tempName, float tempPrice, GenericItem tempAnalog, Category tempCategory) { // товары с указанием категории
+    // товары с указанием категории
+    GenericItem(int tempId, String tempName, float tempPrice, GenericItem tempAnalog, Category tempCategory) {
         id = tempId;
         name = tempName;
         price = tempPrice;
         analog = tempAnalog;
         category = tempCategory;
     }
+
     public boolean equals(Object o) { // сравнение объектов
-        GenericItem Item = (GenericItem) o;
+        GenericItem tempItem = (GenericItem) o;
         return (this.id == ((GenericItem) o).id);
     }
 
     public GenericItem clone() { // клонирование объекты
         try {
-            return (GenericItem)super.clone();
+            return (GenericItem) super.clone();
         } catch (CloneNotSupportedException ex) {
             throw new InternalError();
         }
     }
 
     public GenericItem cloneAnalog() { // клонирование аналога
-            return getAnalog().clone();
+        return getAnalog().clone();
     }
 
     public String toString() { // преобразуем в строку
@@ -60,7 +62,8 @@ public class GenericItem implements Cloneable {
 
     public void printAll() { // метод для вывода информации
         System.out.println("*****");
-        System.out.println("---ID: " + id + " ---Name: " + name + " ---Price: " + price + " ---Analog: " + analog.name + " ---Category: " + category);
+        System.out.println("---ID: " + id + " ---Name: " + name + " ---Price: " + price
+                + " ---Analog: " + analog.name + " ---Category: " + category);
     }
 
     public Category getCategory() {

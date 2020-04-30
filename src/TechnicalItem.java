@@ -27,6 +27,7 @@ public class TechnicalItem extends GenericItem {
         System.out.println("---ID: " + getId() + " ---Name: " + getName() + " ---Price: " + getPrice() + " ---Analog: "
                 + getAnalog().getName() + " ---Category: " + getCategory() + " ---WarrantyTime: " + warrantyTime + " days");
     }
+
     public short getWarrantyTime() {
         return warrantyTime;
     }

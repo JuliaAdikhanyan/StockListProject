@@ -1,3 +1,4 @@
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -5,75 +6,75 @@ public class Main {
 
     public static void main(String[] args) {
 
-        GenericItem Item1 = new GenericItem(606, "book", 70.70f,  null, Category.PRINT);
+        GenericItem item1 = new GenericItem(606, "book", 70.70f,  null, Category.PRINT);
 
-        GenericItem Item2 = new GenericItem(666, "newBook", 220.20f, Item1, Category.PRINT); // экземпляр класса
+        GenericItem item2 = new GenericItem(666, "newBook", 220.20f, item1, Category.PRINT); // экземпляр класса
 
-        Item1.setAnalog(Item2); // добавляем аналог
+        item1.setAnalog(item2); // добавляем аналог
 
-        GenericItem Item3 = new GenericItem(999, "dress", 8080.80f, null, Category.DRESS); // экземпляр класса
+        GenericItem item3 = new GenericItem(999, "dress", 8080.80f, null, Category.DRESS); // экземпляр класса
 
-        GenericItem Item4 = new GenericItem(909, "newDress", 2000.00f, Item3, Category.DRESS); // экземпляр класса
+        GenericItem item4 = new GenericItem(909, "newDress", 2000.00f, item3, Category.DRESS); // экземпляр класса
 
-        Item3.setAnalog(Item4);
+        item3.setAnalog(item4);
 
-        GenericItem Item5 = new GenericItem(555, "glass", 110.10f, null); // экземпляр класса
+        GenericItem item5 = new GenericItem(555, "glass", 110.10f, null); // экземпляр класса
 
-        GenericItem Item6 = new GenericItem(505, "newGlass", 330.30f, Item5); // экземпляр класса
+        GenericItem item6 = new GenericItem(505, "newGlass", 330.30f, item5); // экземпляр класса
 
-        Item5.setAnalog(Item6);
+        item5.setAnalog(item6);
 
-        FoodItem Item7 = new FoodItem(333, "milk", 50.50f, null, Category.FOOD,
+        FoodItem item7 = new FoodItem(333, "milk", 50.50f, null, Category.FOOD,
                 new GregorianCalendar(2020, Calendar.APRIL, 1), (short) 30); // экземпляр класса
 
-        FoodItem Item8 = new FoodItem(303, "newMilk", 150.50f, Item7, Category.FOOD,
+        FoodItem item8 = new FoodItem(303, "newMilk", 150.50f, item7, Category.FOOD,
                 new GregorianCalendar(2020, Calendar.APRIL, 30), (short) 50); // экземпляр класса
 
-        Item7.setAnalog(Item8);
+        item7.setAnalog(item8);
 
-        TechnicalItem Item9 = new TechnicalItem(1111, "phone", 3330.30f, null, (short) 365);
+        TechnicalItem item9 = new TechnicalItem(1111, "phone", 3330.30f, null, (short) 365);
 
-        TechnicalItem Item10 = new TechnicalItem(1001, "newPhone", 30000.00f, Item9, (short) 365);
+        TechnicalItem item10 = new TechnicalItem(1001, "newPhone", 30000.00f, item9, (short) 365);
 
-        Item9.setAnalog(Item10);
+        item9.setAnalog(item10);
 
-        Item1.printAll(); // выводим
-        Item2.printAll();
-        Item3.printAll();
-        Item4.printAll();
-        Item5.printAll();
-        Item6.printAll();
+        item1.printAll(); // выводим
+        item2.printAll();
+        item3.printAll();
+        item4.printAll();
+        item5.printAll();
+        item6.printAll();
 
         System.out.println("*****");
-        System.out.println("Object are equals: " + Item7.equals(Item8)); // сравниваем объекты
+        System.out.println("Object are equals: " + item7.equals(item8)); // сравниваем объекты
 
-        GenericItem[] Items = new GenericItem[] {Item7, Item8, Item9, Item10}; // добавляем в массив
-        for (GenericItem tempItem : Items) {
+        GenericItem[] items = new GenericItem[] {item7, item8, item9, item10}; // добавляем в массив
+        for (GenericItem tempItem : items) {
             tempItem.printAll();
         }
 
-        FoodItem cloneFood = (FoodItem) Item7.clone(); // клонируем Item7
+        FoodItem cloneFood = (FoodItem) item7.clone(); // клонируем item7
 
         System.out.println();
-        System.out.println("Clone Item7: ");
+        System.out.println("Clone item7: ");
         cloneFood.printAll();
 
         System.out.println("*****");
-        System.out.println("Object and clone are equal: " + Item7.equals(cloneFood));
+        System.out.println("Object and clone are equal: " + item7.equals(cloneFood));
 
         System.out.println("*****");
-        System.out.println(Item1.toString()); // преобразовываем в String
+        System.out.println(item1.toString()); // преобразовываем в String
 
         System.out.println("*****");
-        System.out.println(Item4.toString());
+        System.out.println(item4.toString());
 
         System.out.println("*****");
-        System.out.println(Item7.toString());
+        System.out.println(item7.toString());
 
-        GenericItem cloneAnalog = Item1.cloneAnalog(); // клонируем аналог
+        GenericItem cloneAnalog = item1.cloneAnalog(); // клонируем аналог
 
         System.out.println();
-        System.out.println("Clone Analog Item1: ");
+        System.out.println("Clone Analog item: ");
         cloneAnalog.printAll();
     }
 }
