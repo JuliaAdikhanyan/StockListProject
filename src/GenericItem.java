@@ -89,6 +89,6 @@ public class GenericItem implements Cloneable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price, analog, category);
+        return Objects.hash(id, name, price, category);
     }
 }
