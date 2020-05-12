@@ -45,6 +45,8 @@ public class Main {
         item5.printAll();
         item6.printAll();
 
+
+
         System.out.println("*****");
         System.out.println("Object are equals: " + item7.equals(item8)); // сравниваем объекты
 

@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class GenericItem implements Cloneable {
     private int id; // ID товара
     private String name; // наименование товара
@@ -19,11 +21,6 @@ public class GenericItem implements Cloneable {
         price = tempPrice;
         analog = tempAnalog;
         category = tempCategory;
-    }
-
-    public boolean equals(Object o) { // сравнение объектов
-        GenericItem tempItem = (GenericItem) o;
-        return (this.id == ((GenericItem) o).id);
     }
 
     public GenericItem clone() { // клонирование объекты
@@ -72,5 +69,26 @@ public class GenericItem implements Cloneable {
 
     public void setAnalog(GenericItem analog) {
         this.analog = analog;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof GenericItem)) {
+            return false;
+        }
+
+        GenericItem item = (GenericItem) o;
+        return id == item.id && Float.compare(item.price, price) == 0 &&
+                name.equals(item.name) && Objects.equals(analog, item.analog) &&
+                category == item.category;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, price, analog, category);
     }
 }
